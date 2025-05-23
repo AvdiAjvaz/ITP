@@ -1,0 +1,427 @@
+/* ============================
+   Animacione
+============================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animated-fade {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.animated-slide {
+  animation: slideUp 1s ease-in-out;
+}
+
+/* ============================
+   Trupi & Fonti
+============================ */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ============================
+   Header Kryesor
+============================ */
+header {
+  background-color: #002244;
+  /* height: 0%; => këtë hiqe nëse s’e ke hequr ende */
+  color: white;
+  padding: 8px 0; /* më pak padding për më pak lartësi */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+header .container {
+  width: 100%;
+
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #ffcc00;
+}
+
+/* ============================
+   Responsive Menu
+============================ */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #002244;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+
+/* ============================
+   Butoni Logout
+============================ */
+.logout-btn {
+  background-color: #ffcc00;
+  color: #002244;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000;
+  color: white;
+}
+
+/* ============================
+   Hero Section
+============================ */
+.hero {
+  background: linear-gradient(135deg, #004488, #0077cc);
+  color: white;
+  text-align: center;
+  padding: 100px 30px;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #ffeb99;
+}
+
+.hero .btn {
+  background-color: #ffcc00;
+  color: #003366;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.hero .btn:hover {
+  background-color: #ffaa00;
+  transform: scale(1.05);
+}
+
+/* ============================
+   Seksioni i Shërbimeve
+============================ */
+.services {
+  padding: 60px 30px;
+  background-color: #f2f2f2;
+  text-align: center;
+  color:black
+}
+
+.services h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #0077cc;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.card-link {
+  color: #0077cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   Formulari
+============================ */
+form {
+  max-width: 500px;
+  margin: 5px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in-out;
+
+}
+
+form h2 {
+  margin-bottom: 20px;
+  color: #002244;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+  font-size: 1em;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #002244;
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  background-color: #002244;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0099cc;
+}
+
+/* ============================
+   Login Page
+============================ */
+.login-body {
+  background:  #e8eced);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-header {
+  background-color: #002244;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 60px;
+  height: auto;
+}
+
+.logo-box h1 {
+  color: white;
+  font-size: 1.8em;
+  margin: 0;
+}
+
+.login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-card h2 {
+  margin-bottom: 25px;
+  color: #004488;
+  font-size: 1.6em;
+}
+
+.input-icon {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-icon input {
+  width: 90%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.input-icon input:focus {
+  border-color: #00bfff;
+  outline: none;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.login-card button:hover {
+  background-color: #009acd;
+}
+
+.login-card button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #007ba7;
+  transition: left 0.4s;
+  z-index: 0;
+}
+
+.login-card button:hover::before {
+  left: 0;
+}
+
+.login-card button span {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================
+   Footer
+============================ */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #002244;
+  color: #fff;
+}
